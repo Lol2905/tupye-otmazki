@@ -1,248 +1,240 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор Отмазок 3000</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="ru">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>\uc0\u1043 \u1077 \u1085 \u1077 \u1088 \u1072 \u1090 \u1086 \u1088  \u1054 \u1090 \u1084 \u1072 \u1079 \u1086 \u1082  3000</title>\
-    <link href="https://googleapis.com" rel="stylesheet">\
-    <style>\
-        :root \{\
-            --bg-color: #0f172a;\
-            --card-bg: #1e293b;\
-            --accent-color: #38bdf8;\
-            --text-main: #f8fafc;\
-            --text-muted: #94a3b8;\
-        \}\
-\
-        /* \uc0\u1057 \u1090 \u1080 \u1083 \u1100  \u1076 \u1083 \u1103  \u1082 \u1086 \u1096 \u1072 \u1095 \u1100 \u1077 \u1081  \u1090 \u1077 \u1084 \u1099  */\
-        body.cat-theme \{\
-            --bg-color: #1a120b;\
-            --card-bg: #3c2a21;\
-            --accent-color: #e5ba73;\
-        \}\
-\
-        /* \uc0\u1057 \u1090 \u1080 \u1083 \u1100  \u1076 \u1083 \u1103  \u1090 \u1077 \u1084 \u1099  \u1076 \u1088 \u1091 \u1079 \u1077 \u1081  */\
-        body.friends-theme \{\
-            --bg-color: #121824;\
-            --card-bg: #1e2640;\
-            --accent-color: #f43f5e;\
-        \}\
-\
-        * \{\
-            box-sizing: border-box;\
-            margin: 0;\
-            padding: 0;\
-            font-family: 'Montserrat', sans-serif;\
-            transition: all 0.3s ease;\
-        \}\
-\
-        body \{\
-            background-color: var(--bg-color);\
-            color: var(--text-main);\
-            display: flex;\
-            flex-direction: column;\
-            align-items: center;\
-            justify-content: center;\
-            min-height: 100vh;\
-            padding: 20px;\
-            overflow-x: hidden;\
-        \}\
-\
-        .container \{\
-            max-width: 600px;\
-            width: 100%;\
-            text-align: center;\
-        \}\
-\
-        h1 \{\
-            font-size: 2.5rem;\
-            font-weight: 900;\
-            margin-bottom: 10px;\
-            text-transform: uppercase;\
-            letter-spacing: 2px;\
-        \}\
-\
-        .subtitle \{\
-            color: var(--text-muted);\
-            margin-bottom: 30px;\
-            font-size: 1rem;\
-        \}\
-\
-        .tabs \{\
-            display: flex;\
-            background-color: var(--card-bg);\
-            padding: 6px;\
-            border-radius: 12px;\
-            margin-bottom: 30px;\
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);\
-        \}\
-\
-        .tab \{\
-            flex: 1;\
-            padding: 12px;\
-            border: none;\
-            background: transparent;\
-            color: var(--text-muted);\
-            font-weight: 700;\
-            font-size: 0.9rem;\
-            cursor: pointer;\
-            border-radius: 8px;\
-        \}\
-\
-        .tab.active \{\
-            background-color: var(--accent-color);\
-            color: var(--bg-color);\
-        \}\
-\
-        .card \{\
-            background-color: var(--card-bg);\
-            padding: 40px 30px;\
-            border-radius: 24px;\
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);\
-            margin-bottom: 30px;\
-            min-height: 180px;\
-            display: flex;\
-            align-items: center;\
-            justify-content: center;\
-            position: relative;\
-            border: 2px solid transparent;\
-        \}\
-\
-        .card:hover \{\
-            border-color: var(--accent-color);\
-            transform: translateY(-2px);\
-        \}\
-\
-        #excuse-text \{\
-            font-size: 1.4rem;\
-            font-weight: 700;\
-            line-height: 1.5;\
-            animation: fadeIn 0.4s ease;\
-        \}\
-\
-        .btn-generate \{\
-            background-color: var(--accent-color);\
-            color: var(--bg-color);\
-            border: none;\
-            padding: 20px 40px;\
-            font-size: 1.2rem;\
-            font-weight: 900;\
-            border-radius: 50px;\
-            cursor: pointer;\
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);\
-            text-transform: uppercase;\
-            letter-spacing: 1px;\
-            width: 100%;\
-            max-width: 320px;\
-        \}\
-\
-        .btn-generate:hover \{\
-            transform: scale(1.05);\
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);\
-        \}\
-\
-        .btn-generate:active \{\
-            transform: scale(0.98);\
-        \}\
-\
-        @keyframes fadeIn \{\
-            from \{ opacity: 0; transform: translateY(10px); \}\
-            to \{ opacity: 1; transform: translateY(0); \}\
-        \}\
-\
-        @media (max-width: 480px) \{\
-            h1 \{ font-size: 1.8rem; \}\
-            #excuse-text \{ font-size: 1.1rem; \}\
-            .tab \{ font-size: 0.8rem; padding: 10px 5px; \}\
-        \}\
-    </style>\
-</head>\
-<body>\
-\
-    <div class="container">\
-        <h1>\uc0\u1054 \u1090 \u1084 \u1072 \u1079 \u1082 \u1080  3000</h1>\
-        <p class="subtitle">\uc0\u1043 \u1077 \u1085 \u1077 \u1088 \u1080 \u1088 \u1091 \u1081  \u1078 \u1077 \u1083 \u1077 \u1079 \u1085 \u1086 \u1077  \u1072 \u1083 \u1080 \u1073 \u1080  \u1074  \u1086 \u1076 \u1080 \u1085  \u1082 \u1083 \u1080 \u1082 </p>\
-\
-        <div class="tabs">\
-            <button class="tab active" onclick="setCategory('boss')">\uc0\u55357 \u56508  \u1064 \u1077 \u1092 \u1091 </button>\
-            <button class="tab" onclick="setCategory('cat')">\uc0\u55357 \u56328  \u1050 \u1086 \u1090 \u1091 </button>\
-            <button class="tab" onclick="setCategory('friends')">\uc0\u55356 \u57211  \u1044 \u1088 \u1091 \u1079 \u1100 \u1103 \u1084 </button>\
-        </div>\
-\
-        <div class="card">\
-            <div id="excuse-text">\uc0\u1053 \u1072 \u1078 \u1084 \u1080  \u1085 \u1072  \u1082 \u1085 \u1086 \u1087 \u1082 \u1091  \u1085 \u1080 \u1078 \u1077 , \u1095 \u1090 \u1086 \u1073 \u1099  \u1089 \u1087 \u1072 \u1089 \u1090 \u1080  \u1089 \u1074 \u1086 \u1102  \u1088 \u1077 \u1087 \u1091 \u1090 \u1072 \u1094 \u1080 \u1102 ...</div>\
-        </div>\
-\
-        <button class="btn-generate" onclick="generateExcuse()">\uc0\u1052 \u1085 \u1077  \u1085 \u1091 \u1078 \u1085 \u1072  \u1086 \u1090 \u1084 \u1072 \u1079 \u1082 \u1072 !</button>\
-    </div>\
-\
-    <script>\
-        // \uc0\u1057 \u1102 \u1076 \u1072  \u1084 \u1086 \u1078 \u1085 \u1086  \u1076 \u1086 \u1087 \u1080 \u1089 \u1099 \u1074 \u1072 \u1090 \u1100  \u1089 \u1074 \u1086 \u1080  \u1096 \u1091 \u1090 \u1082 \u1080  \u1074 \u1085 \u1091 \u1090 \u1088 \u1080  \u1082 \u1072 \u1074 \u1099 \u1095 \u1077 \u1082  \u1095 \u1077 \u1088 \u1077 \u1079  \u1079 \u1072 \u1087 \u1103 \u1090 \u1091 \u1102 \
-        const excuses = \{\
-            boss: [\
-                "\uc0\u1071  \u1085 \u1077  \u1086 \u1087 \u1086 \u1079 \u1076 \u1072 \u1083 , \u1103  \u1087 \u1088 \u1086 \u1074 \u1086 \u1076 \u1080 \u1083  \u1075 \u1083 \u1091 \u1073 \u1086 \u1082 \u1080 \u1081  \u1072 \u1085 \u1072 \u1083 \u1080 \u1079  \u1088 \u1099 \u1085 \u1082 \u1072  \u1087 \u1086  \u1087 \u1091 \u1090 \u1080  \u1086 \u1090  \u1083 \u1080 \u1092 \u1090 \u1072  \u1076 \u1086  \u1089 \u1090 \u1086 \u1083 \u1072 .",\
-                "\uc0\u1055 \u1088 \u1086 \u1077 \u1082 \u1090  \u1079 \u1072 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1077 \u1090 \u1089 \u1103 , \u1090 \u1072 \u1082  \u1082 \u1072 \u1082  \u1084 \u1099  \u1089 \u1090 \u1086 \u1083 \u1082 \u1085 \u1091 \u1083 \u1080 \u1089 \u1100  \u1089  \u1085 \u1077 \u1087 \u1088 \u1077 \u1076 \u1074 \u1080 \u1076 \u1077 \u1085 \u1085 \u1086 \u1081  \u1082 \u1074 \u1072 \u1085 \u1090 \u1086 \u1074 \u1086 \u1081  \u1076 \u1077 \u1089 \u1080 \u1085 \u1093 \u1088 \u1086 \u1085 \u1080 \u1079 \u1072 \u1094 \u1080 \u1077 \u1081  \u1073 \u1072 \u1079 \u1099  \u1076 \u1072 \u1085 \u1085 \u1099 \u1093 . \u1055 \u1080 \u1096 \u1091  \u1087 \u1072 \u1090 \u1095 .",\
-                "\uc0\u1053 \u1077  \u1089 \u1084 \u1086 \u1075  \u1087 \u1088 \u1080 \u1081 \u1090 \u1080  \u1085 \u1072  \u1089 \u1086 \u1079 \u1074 \u1086 \u1085 : \u1087 \u1088 \u1086 \u1074 \u1072 \u1081 \u1076 \u1077 \u1088  \u1087 \u1088 \u1086 \u1074 \u1086 \u1076 \u1080 \u1083  \u1087 \u1083 \u1072 \u1085 \u1086 \u1074 \u1086 \u1077  \u1086 \u1073 \u1085 \u1086 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  \u1082 \u1072 \u1073 \u1077 \u1083 \u1103  \u1084 \u1077 \u1090 \u1086 \u1076 \u1086 \u1084  \u1077 \u1075 \u1086  \u1089 \u1083 \u1091 \u1095 \u1072 \u1081 \u1085 \u1086 \u1075 \u1086  \u1087 \u1077 \u1088 \u1077 \u1088 \u1091 \u1073 \u1072 \u1085 \u1080 \u1103 .",\
-                "\uc0\u1071  \u1086 \u1090 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083  \u1086 \u1090 \u1095 \u1077 \u1090  \u1074 \u1086 \u1074 \u1088 \u1077 \u1084 \u1103 , \u1085 \u1086 , \u1087 \u1086 \u1093 \u1086 \u1078 \u1077 , \u1077 \u1075 \u1086  \u1087 \u1077 \u1088 \u1077 \u1093 \u1074 \u1072 \u1090 \u1080 \u1083 \u1080  \u1082 \u1086 \u1088 \u1087 \u1086 \u1088 \u1072 \u1090 \u1080 \u1074 \u1085 \u1099 \u1077  \u1089 \u1087 \u1072 \u1084 -\u1092 \u1080 \u1083 \u1100 \u1090 \u1088 \u1099  \u1080 \u1079 -\u1079 \u1072  \u1089 \u1083 \u1080 \u1096 \u1082 \u1086 \u1084  \u1074 \u1099 \u1089 \u1086 \u1082 \u1086 \u1081  \u1082 \u1086 \u1085 \u1094 \u1077 \u1085 \u1090 \u1088 \u1072 \u1094 \u1080 \u1080  \u1075 \u1077 \u1085 \u1080 \u1072 \u1083 \u1100 \u1085 \u1086 \u1089 \u1090 \u1080 .",\
-                "\uc0\u1048 \u1079 \u1074 \u1080 \u1085 \u1080 \u1090 \u1077  \u1079 \u1072  \u1086 \u1087 \u1086 \u1079 \u1076 \u1072 \u1085 \u1080 \u1077 , \u1103  \u1079 \u1072 \u1089 \u1090 \u1088 \u1103 \u1083  \u1074  \u1101 \u1082 \u1079 \u1080 \u1089 \u1090 \u1077 \u1085 \u1094 \u1080 \u1072 \u1083 \u1100 \u1085 \u1086 \u1084  \u1082 \u1088 \u1080 \u1079 \u1080 \u1089 \u1077  \u1087 \u1088 \u1103 \u1084 \u1086  \u1085 \u1072  \u1074 \u1099 \u1093 \u1086 \u1076 \u1077  \u1080 \u1079  \u1082 \u1086 \u1084 \u1099  \u1089 \u1085 \u1072 .",\
-                "\uc0\u1071  \u1085 \u1077  \u1079 \u1072 \u1083 \u1080 \u1087  \u1085 \u1072  \u1102 \u1090 \u1091 \u1073 \u1077 , \u1103  \u1090 \u1077 \u1089 \u1090 \u1080 \u1088 \u1086 \u1074 \u1072 \u1083  \u1080 \u1085 \u1090 \u1077 \u1088 \u1092 \u1077 \u1081 \u1089  \u1085 \u1072  \u1087 \u1088 \u1077 \u1076 \u1084 \u1077 \u1090  \u1079 \u1072 \u1089 \u1099 \u1087 \u1072 \u1085 \u1080 \u1103  \u1089 \u1083 \u1091 \u1095 \u1072 \u1081 \u1085 \u1086 \u1075 \u1086  \u1087 \u1086 \u1083 \u1100 \u1079 \u1086 \u1074 \u1072 \u1090 \u1077 \u1083 \u1103 ."\
-            ],\
-            cat: [\
-                "\uc0\u1071  \u1085 \u1077  \u1086 \u1087 \u1086 \u1079 \u1076 \u1072 \u1083  \u1089  \u1091 \u1078 \u1080 \u1085 \u1086 \u1084  \u1085 \u1072  5 \u1084 \u1080 \u1085 \u1091 \u1090 , \u1103  \u1074 \u1099 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1083  \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1099 \u1081  \u1090 \u1077 \u1084 \u1087 \u1077 \u1088 \u1072 \u1090 \u1091 \u1088 \u1085 \u1099 \u1081  \u1073 \u1072 \u1083 \u1072 \u1085 \u1089  \u1087 \u1072 \u1096 \u1090 \u1077 \u1090 \u1072 .",\
-                "\uc0\u1071  \u1082 \u1091 \u1087 \u1080 \u1083  \u1101 \u1090 \u1086 \u1090  \u1076 \u1077 \u1096 \u1077 \u1074 \u1099 \u1081  \u1089 \u1091 \u1093 \u1086 \u1081  \u1082 \u1086 \u1088 \u1084  \u1090 \u1086 \u1083 \u1100 \u1082 \u1086  \u1087 \u1086 \u1090 \u1086 \u1084 \u1091 , \u1095 \u1090 \u1086  \u1076 \u1086 \u1088 \u1086 \u1075 \u1086 \u1081  \u1074 \u1088 \u1077 \u1076 \u1077 \u1085  \u1076 \u1083 \u1103  \u1090 \u1074 \u1086 \u1077 \u1081  \u1072 \u1088 \u1080 \u1089 \u1090 \u1086 \u1082 \u1088 \u1072 \u1090 \u1080 \u1095 \u1077 \u1089 \u1082 \u1086 \u1081  \u1092 \u1080 \u1075 \u1091 \u1088 \u1099 .",\
-                "\uc0\u1071  \u1089 \u1086 \u1075 \u1085 \u1072 \u1083  \u1090 \u1077 \u1073 \u1103  \u1089 \u1086  \u1089 \u1090 \u1091 \u1083 \u1072  \u1085 \u1077  \u1080 \u1079  \u1074 \u1088 \u1077 \u1076 \u1085 \u1086 \u1089 \u1090 \u1080 , \u1072  \u1095 \u1090 \u1086 \u1073 \u1099  \u1089 \u1087 \u1072 \u1089 \u1090 \u1080  \u1090 \u1074 \u1086 \u1080  \u1095 \u1077 \u1088 \u1085 \u1099 \u1077  \u1096 \u1090 \u1072 \u1085 \u1099  \u1086 \u1090  \u1084 \u1086 \u1077 \u1081  \u1073 \u1077 \u1083 \u1086 \u1081  \u1096 \u1077 \u1088 \u1089 \u1090 \u1080  \u1085 \u1072  \u1076 \u1078 \u1080 \u1085 \u1089 \u1072 \u1093 .",\
-                "\uc0\u1071  \u1091 \u1073 \u1088 \u1072 \u1083  \u1082 \u1086 \u1088 \u1086 \u1073 \u1082 \u1091  \u1080 \u1079 -\u1087 \u1086 \u1076  \u1086 \u1073 \u1091 \u1074 \u1080 , \u1087 \u1086 \u1090 \u1086 \u1084 \u1091  \u1095 \u1090 \u1086  \u1086 \u1085 \u1072  \u1085 \u1077  \u1087 \u1086 \u1076 \u1093 \u1086 \u1076 \u1080 \u1083 \u1072  \u1087 \u1086 \u1076  \u1090 \u1074 \u1086 \u1081  \u1092 \u1101 \u1085 \u1096 \u1091 \u1081 -\u1076 \u1080 \u1079 \u1072 \u1081 \u1085  \u1082 \u1086 \u1088 \u1080 \u1076 \u1086 \u1088 \u1072 .",\
-                "\uc0\u1071  \u1085 \u1077  \u1075 \u1083 \u1072 \u1076 \u1080 \u1083  \u1076 \u1088 \u1091 \u1075 \u1086 \u1075 \u1086  \u1082 \u1086 \u1090 \u1072  \u1085 \u1072  \u1091 \u1083 \u1080 \u1094 \u1077 ! \u1054 \u1090  \u1084 \u1077 \u1085 \u1103  \u1087 \u1072 \u1093 \u1085 \u1077 \u1090  \u1096 \u1072 \u1074 \u1077 \u1088 \u1084 \u1086 \u1081  \u1080 \u1089 \u1082 \u1083 \u1102 \u1095 \u1080 \u1090 \u1077 \u1083 \u1100 \u1085 \u1086  \u1074  \u1075 \u1072 \u1089 \u1090 \u1088 \u1086 \u1085 \u1086 \u1084 \u1080 \u1095 \u1077 \u1089 \u1082 \u1080 \u1093  \u1094 \u1077 \u1083 \u1103 \u1093 ."\
-            ],\
-            friends: [\
-                "\uc0\u1056 \u1077 \u1073 \u1103 \u1090 \u1072 , \u1085 \u1077  \u1087 \u1088 \u1080 \u1077 \u1076 \u1091 . \u1059  \u1084 \u1077 \u1085 \u1103  \u1090 \u1091 \u1090  \u1092 \u1086 \u1088 \u1089 -\u1084 \u1072 \u1078 \u1086 \u1088 : \u1076 \u1080 \u1074 \u1072 \u1085  \u1079 \u1072 \u1089 \u1077 \u1083  \u1074  \u1075 \u1083 \u1091 \u1093 \u1091 \u1102  \u1086 \u1073 \u1086 \u1088 \u1086 \u1085 \u1091  \u1080  \u1074 \u1079 \u1103 \u1083  \u1084 \u1077 \u1085 \u1103  \u1074  \u1079 \u1072 \u1083 \u1086 \u1078 \u1085 \u1080 \u1082 \u1080 .",\
-                "\uc0\u1071  \u1091 \u1078 \u1077  \u1074 \u1099 \u1093 \u1086 \u1078 \u1091 ! (\u1055 \u1077 \u1088 \u1077 \u1074 \u1086 \u1076 : \u1103  \u1090 \u1086 \u1083 \u1100 \u1082 \u1086  \u1095 \u1090 \u1086  \u1086 \u1090 \u1082 \u1088 \u1099 \u1083  \u1086 \u1076 \u1080 \u1085  \u1075 \u1083 \u1072 \u1079  \u1080  \u1087 \u1099 \u1090 \u1072 \u1102 \u1089 \u1100  \u1074 \u1089 \u1087 \u1086 \u1084 \u1085 \u1080 \u1090 \u1100 , \u1082 \u1090 \u1086  \u1103 ).",\
-                "\uc0\u1053 \u1077  \u1084 \u1086 \u1075 \u1091  \u1087 \u1080 \u1090 \u1100  \u1074  \u1087 \u1103 \u1090 \u1085 \u1080 \u1094 \u1091 , \u1084 \u1086 \u1081  \u1074 \u1085 \u1091 \u1090 \u1088 \u1077 \u1085 \u1085 \u1080 \u1081  \u1090 \u1072 \u1084 \u1072 \u1076 \u1072  \u1091 \u1096 \u1077 \u1083  \u1085 \u1072  \u1073 \u1086 \u1083 \u1100 \u1085 \u1080 \u1095 \u1085 \u1099 \u1081  \u1087 \u1086  \u1089 \u1086 \u1089 \u1090 \u1086 \u1103 \u1085 \u1080 \u1102  \u1087 \u1077 \u1095 \u1077 \u1085 \u1080 .",\
-                "\uc0\u1071  \u1073 \u1099  \u1089  \u1088 \u1072 \u1076 \u1086 \u1089 \u1090 \u1100 \u1102  \u1087 \u1086 \u1096 \u1077 \u1083  \u1074  \u1073 \u1072 \u1088 , \u1085 \u1086  \u1084 \u1086 \u1081  \u1075 \u1086 \u1088 \u1086 \u1089 \u1082 \u1086 \u1087  \u1082 \u1072 \u1090 \u1077 \u1075 \u1086 \u1088 \u1080 \u1095 \u1077 \u1089 \u1082 \u1080  \u1079 \u1072 \u1087 \u1088 \u1077 \u1097 \u1072 \u1077 \u1090  \u1084 \u1085 \u1077  \u1089 \u1077 \u1075 \u1086 \u1076 \u1085 \u1103  \u1090 \u1088 \u1072 \u1090 \u1080 \u1090 \u1100  \u1076 \u1077 \u1085 \u1100 \u1075 \u1080  \u1080  \u1074 \u1080 \u1076 \u1077 \u1090 \u1100  \u1083 \u1102 \u1076 \u1077 \u1081 .",\
-                "\uc0\u1071  \u1079 \u1072 \u1089 \u1090 \u1088 \u1103 \u1083  \u1074  \u1090 \u1077 \u1082 \u1089 \u1090 \u1091 \u1088 \u1072 \u1093  \u1089 \u1074 \u1086 \u1077 \u1081  \u1082 \u1074 \u1072 \u1088 \u1090 \u1080 \u1088 \u1099 , \u1078 \u1076 \u1091  \u1087 \u1077 \u1088 \u1077 \u1079 \u1072 \u1075 \u1088 \u1091 \u1079 \u1082 \u1080  \u1089 \u1077 \u1088 \u1074 \u1077 \u1088 \u1072 .",\
-                "\uc0\u1052 \u1086 \u1081  \u1087 \u1089 \u1080 \u1093 \u1086 \u1090 \u1077 \u1088 \u1072 \u1087 \u1077 \u1074 \u1090  \u1089 \u1082 \u1072 \u1079 \u1072 \u1083 , \u1095 \u1090 \u1086  \u1084 \u1085 \u1077  \u1085 \u1091 \u1078 \u1085 \u1086  \u1074 \u1088 \u1077 \u1084 \u1077 \u1085 \u1085 \u1086  \u1086 \u1075 \u1088 \u1072 \u1085 \u1080 \u1095 \u1080 \u1090 \u1100  \u1086 \u1073 \u1097 \u1077 \u1085 \u1080 \u1077  \u1089  \u1091 \u1089 \u1087 \u1077 \u1096 \u1085 \u1099 \u1084 \u1080  \u1080  \u1082 \u1088 \u1072 \u1089 \u1080 \u1074 \u1099 \u1084 \u1080  \u1083 \u1102 \u1076 \u1100 \u1084 \u1080 , \u1090 \u1072 \u1082  \u1095 \u1090 \u1086  \u1080 \u1079 \u1074 \u1080 \u1085 \u1080 \u1090 \u1077 ."\
-            ]\
-        \};\
-\
-        let currentCategory = 'boss';\
-\
-        function setCategory(category) \{\
-            currentCategory = category;\
-            \
-            document.querySelectorAll('.tab').forEach((tab) => \{\
-                tab.classList.remove('active');\
-            \});\
-            \
-            const tabIndex = category === 'boss' ? 0 : category === 'cat' ? 1 : 2;\
-            document.querySelectorAll('.tab')[tabIndex].classList.add('active');\
-\
-            document.body.className = '';\
-            if (category !== 'boss') \{\
-                document.body.classList.add(`$\{category\}-theme`);\
-            \}\
-\
-            document.getElementById('excuse-text').innerText = "\uc0\u1050 \u1072 \u1090 \u1077 \u1075 \u1086 \u1088 \u1080 \u1103  \u1089 \u1084 \u1077 \u1085 \u1077 \u1085 \u1072 . \u1046 \u1084 \u1080  \u1082 \u1085 \u1086 \u1087 \u1082 \u1091 !";\
-        \}\
-\
-        function generateExcuse() \{\
-            const list = excuses[currentCategory];\
-            const randomIndex = Math.floor(Math.random() * list.length);\
-            const textElement = document.getElementById('excuse-text');\
-            \
-            textElement.style.animation = 'none';\
-            textElement.offsetHeight; // \uc0\u1057 \u1073 \u1088 \u1086 \u1089  \u1072 \u1085 \u1080 \u1084 \u1072 \u1094 \u1080 \u1080  \u1076 \u1083 \u1103  \u1087 \u1086 \u1074 \u1090 \u1086 \u1088 \u1085 \u1086 \u1075 \u1086  \u1101 \u1092 \u1092 \u1077 \u1082 \u1090 \u1072  \u1087 \u1086 \u1103 \u1074 \u1083 \u1077 \u1085 \u1080 \u1103 \
-            textElement.style.animation = 'fadeIn 0.4s ease';\
-            \
-            textElement.innerText = list[randomIndex];\
-        \}\
-    </script>\
-</body>\
-</html>\
-}
+        /* Стиль для кошачьей темы */
+        body.cat-theme {
+            --bg-color: #1a120b;
+            --card-bg: #3c2a21;
+            --accent-color: #e5ba73;
+        }
+
+        /* Стиль для темы друзей */
+        body.friends-theme {
+            --bg-color: #121824;
+            --card-bg: #1e2640;
+            --accent-color: #f43f5e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: var(--card-bg);
+            padding: 6px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .tab.active {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        #excuse-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.5;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .btn-generate {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: 900;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-generate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .btn-generate:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            #excuse-text { font-size: 1.1rem; }
+            .tab { font-size: 0.8rem; padding: 10px 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Отмазки 3000</h1>
+        <p class="subtitle">Генерируй железное алиби в один клик</p>
+
+        <div class="tabs">
+            <button class="tab active" onclick="setCategory('boss')">💼 Шефу</button>
+            <button class="tab" onclick="setCategory('cat')">🐈 Коту</button>
+            <button class="tab" onclick="setCategory('friends')">🍻 Друзьям</button>
+        </div>
+
+        <div class="card">
+            <div id="excuse-text">Нажми на кнопку ниже, чтобы спасти свою репутацию...</div>
+        </div>
+
+        <button class="btn-generate" onclick="generateExcuse()">Мне нужна отмазка!</button>
+    </div>
+
+    <script>
+        // Сюда можно дописывать свои шутки внутри кавычек через запятую
+        const excuses = {
+            boss: [
+                "Я не опоздал, я проводил глубокий анализ рынка по пути от лифта до стола.",
+                "Проект задерживается, так как мы столкнулись с непредвиденной квантовой десинхронизацией базы данных. Пишу патч.",
+                "Не смог прийти на созвон: провайдер проводил плановое обновление кабеля методом его случайного перерубания.",
+                "Я отправил отчет вовремя, но, похоже, его перехватили корпоративные спам-фильтры из-за слишком высокой концентрации гениальности.",
+                "Извините за опоздание, я застрял в экзистенциальном кризисе прямо на выходе из комы сна.",
+                "Я не залип на ютубе, я тестировал интерфейс на предмет засыпания случайного пользователя."
+            ],
+            cat: [
+                "Я не опоздал с ужином на 5 минут, я выдерживал правильный температурный баланс паштета.",
+                "Я купил этот дешевый сухой корм только потому, что дорогой вреден для твоей аристократической фигуры.",
+                "Я согнал тебя со стула не из вредности, а чтобы спасти твои черные штаны от моей белой шерсти на джинсах.",
+                "Я убрал коробку из-под обуви, потому что она не подходила под твой фэншуй-дизайн коридора.",
+                "Я не гладил другого кота на улице! От меня пахнет шавермой исключительно в гастрономических целях."
+            ],
+            friends: [
+                "Ребята, не приеду. У меня тут форс-мажор: диван засел в глухую оборону и взял меня в заложники.",
+                "Я уже выхожу! (Перевод: я только что открыл один глаз и пытаюсь вспомнить, кто я).",
+                "Не могу пить в пятницу, мой внутренний тамада ушел на больничный по состоянию печени.",
+                "Я бы с радостью пошел в бар, но мой гороскоп категорически запрещает мне сегодня тратить деньги и видеть людей.",
+                "Я застрял в текстурах своей квартиры, жду перезагрузки сервера.",
+                "Мой психотерапевт сказал, что мне нужно временно ограничить общение с успешными и красивыми людьми, так что извините."
+            ]
+        };
+
+        let currentCategory = 'boss';
+
+        function setCategory(category) {
+            currentCategory = category;
+            
+            document.querySelectorAll('.tab').forEach((tab) => {
+                tab.classList.remove('active');
+            });
+            
+            const tabIndex = category === 'boss' ? 0 : category === 'cat' ? 1 : 2;
+            document.querySelectorAll('.tab')[tabIndex].classList.add('active');
+
+            document.body.className = '';
+            if (category !== 'boss') {
+                document.body.classList.add(`${category}-theme`);
+            }
+
+            document.getElementById('excuse-text').innerText = "Категория сменена. Жми кнопку!";
+        }
+
+        function generateExcuse() {
+            const list = excuses[currentCategory];
+            const randomIndex = Math.floor(Math.random() * list.length);
+            const textElement = document.getElementById('excuse-text');
+            
+            textElement.style.animation = 'none';
+            textElement.offsetHeight; // Сброс анимации для повторного эффекта появления
+            textElement.style.animation = 'fadeIn 0.4s ease';
+            
+            textElement.innerText = list[randomIndex];
+        }
+    </script>
+</body>
+</html>
